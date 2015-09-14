@@ -17,18 +17,19 @@ $(document).ready(function() {
       $(".name").text(newTasks.name);
       $(".description").text(newTasks.description);
 
+      $(".complete-task").off();
+      $(".complete-task").click(function() {
+        $("#show-tasks").hide()
+        $("#completed-tasks").append("<li><span class='tasks'>" + newTasks.name + "</span></li>");
+        $("#show-tasks h2").text("");
+        $(".name").text("");
+        $(".description").text("");
+        $(".task-" + newTasks.name).remove();
+      });
     });
 
     $("input#new-name").val("");
     $("input#new-description").val("");
-    $(".complete-task").click(function() {
-      debugger;
-      $("#completed-tasks").append("<li><span class='tasks'>" + newTasks.name + "</span></li>");
-      $("#show-tasks h2").text("");
-      $(".name").text("");
-      $(".description").text("");
-      $(".task-" + newTasks.name).remove();
-    });
 
   });
 });
