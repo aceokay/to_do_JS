@@ -33,14 +33,3 @@ $(document).ready(function() {
 
   });
 });
-
-
-
-$(".new-address").each(function() {
-     var inputtedStreet = $(this).find("input.new-street").val();
-     var inputtedCity = $(this).find("input.new-city").val();
-     var inputtedState = $(this).find("input.new-state").val();
-
-     var newAddress = { street: inputtedStreet, city: inputtedCity, state: inputtedState };
-     newContact.addresses.push(newAddress);
-   });
